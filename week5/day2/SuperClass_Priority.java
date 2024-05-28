@@ -14,14 +14,14 @@ public class SuperClass_Priority {
 	public static ChromeDriver driver;
 	
 	@BeforeMethod
-	public void setuplogin(String url, String uName, String passwrd) {
+	public void setuplogin() {
 		
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.get(url);
+		driver.get("http://leaftaps.com/opentaps/");
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-		driver.findElement(By.id("username")).sendKeys(uName);
-		driver.findElement(By.id("password")).sendKeys(passwrd);
+		driver.findElement(By.id("username")).sendKeys("Demosalesmanager");
+		driver.findElement(By.id("password")).sendKeys("crmsfa");
 		driver.findElement(By.className("decorativeSubmit")).click();
 		driver.findElement(By.linkText("CRM/SFA")).click();
 		
