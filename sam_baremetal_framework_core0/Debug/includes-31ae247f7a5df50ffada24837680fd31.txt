@@ -1,0 +1,2 @@
+-I"C:/Users/JIIN05120713/Desktop/framework/sam_baremetal_framework_core0/system"
+-I"C:/Users/JIIN05120713/Desktop/framework/sam_baremetal_framework_core0/.."
