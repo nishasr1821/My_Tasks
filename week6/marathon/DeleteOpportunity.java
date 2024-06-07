@@ -10,7 +10,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
+import org.testng.Assert;
 
 
 public class DeleteOpportunity extends SuperClass{
@@ -41,15 +41,17 @@ public class DeleteOpportunity extends SuperClass{
 		Thread.sleep(3000);
 		WebElement record = driver.findElement(By.xpath("//lightning-formatted-rich-text[@class='slds-rich-text-editor__output']/span"));
 	      String record1 = record.getText();
-	      System.out.println("Available records" + record1);
 	      //verify the name matched
-	      if (record1.equals("No items to display.")) {
-	    	  System.out.println("Opportunity is Deleted ");
-			
-		}
-      else {
-	    	  System.out.println("Opportunity is not Deleted");
-	      }
+	      
+	      Assert.assertEquals(record1, "No items to display.");
+	      System.out.println("Available records: " + record1);
+//	      if (record1.equals("No items to display.")) {
+//	    	  System.out.println("Opportunity is Deleted ");
+//			
+//		}
+//      else {
+//	    	  System.out.println("Opportunity is not Deleted");
+//	      }
 	      
 }
 }
