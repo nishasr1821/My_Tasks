@@ -43,14 +43,21 @@ public class CreateOpportunity extends SuperClass{
 		WebElement oppstatus = driver.findElement(By.xpath("//slot[@name='primaryField']/lightning-formatted-text"));
 		System.out.println("Opportunity name is: " + oppstatus.getText());
 	     
-	    //verify the name matched
-	      if (oppstatus.getText().contains("Nishanthi")) {
-	    	  System.out.println("Opportunity created successfully");
-			
-		}
-	      else {
-	    	  System.out.println("Opportunity is not created correctly");
-	      }
+	     //verify the name matched
+		String status = oppstatus.getText();
+		Assert.assertEquals(status,oppName );
+		System.out.println("Opportunity created and verified successfully");
+		
+//	      if (oppstatus.getText().contains("Nishanthi")) {
+//	    	  System.out.println("Opportunity created successfully");
+//			
+//		}
+//	      else {
+//	    	  System.out.println("Opportunity is not created correctly");
+//	      }
+	      
+	      
+
 	      
 	      
 
