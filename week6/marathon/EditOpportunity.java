@@ -9,7 +9,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
+import org.testng.Assert;
 
 
 public class EditOpportunity extends SuperClass{
@@ -48,15 +48,17 @@ public class EditOpportunity extends SuperClass{
 		Thread.sleep(3000);
 		WebElement stage = driver.findElement(By.xpath("//table/tbody/tr/td[5]"));
 	      String stage1 = stage.getText();
+	     //verify the name matched
+	      Assert.assertEquals(stage1, "Perception Analysis");
 	      System.out.println("Edited stage is:" + stage1);
-	      //verify the name matched
-	      if (stage1.equals("Perception Analysis")) {
-	    	  System.out.println("Opportunity stage is updated");
-			
-		}
-      else {
-	    	  System.out.println("Opportunity stage is not updated");
-	      }
+	      System.out.println("Opportunity stage is updated");
+//	      if (stage1.equals("Perception Analysis")) {
+//	    	  System.out.println("Opportunity stage is updated");
+//			
+//		}
+//      else {
+//	    	  System.out.println("Opportunity stage is not updated");
+//	      }
 	      
 }
 }
